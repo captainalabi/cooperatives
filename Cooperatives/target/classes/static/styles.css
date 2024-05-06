@@ -1,0 +1,16 @@
+.header{
+	background: linear-gradient(
+  to bottom,
+  #5d9634,
+  #5d9634 50%,
+  #538c2b 50%,
+  #538c2b
+);
+/* The rectangle in which to repeat. 
+   It can be fully wide in this case */
+background-size: 100% 20%;
+}
+
+*{
+	background-color: blue;
+}
