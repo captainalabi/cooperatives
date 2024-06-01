@@ -28,5 +28,11 @@ public class CooperativeServiceImpl implements CooperativesService {
 	@Override
 	public Optional<Cooperatives> findCooperativesByID(long id) {
 		return cooperativesRepository.findById(id);
+	}
+
+	@Override
+	public String delete(long id) {
+		cooperativesRepository.deleteById(id);
+		return "Cooperative record successfully deleted!";
 	} 
 }

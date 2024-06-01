@@ -20,15 +20,22 @@
 	</head>	
 	<body style="background-color:teal">
 		
-<div class="container">
+		<div class="container">	
 						<div>
-							<center><h2>All Cooperatives</h2></center>
+							<h2>All Cooperatives</h2>
 						</div>
-		<div class="card">
-						<center>
-					<th:block th:each="cooperatives:${cooperativesList}">
-					<div class="col-sm-12">						
-						<div>
+						<div th:if="${message}">
+							<div th:text="${message}" class="btn btn-primary"></div>
+						</div>
+											
+		<div class="row">
+			<div class="col-md-1">
+					<a th:href="@{/}">Home</a>
+				</div>
+			<th:block th:each="cooperatives:${cooperativesList}">
+			<div class="col-md-10">	
+				<center>			
+					<div>
 							<img th:src="@{'/image?id='+ ${cooperatives.id}}" style="width:100px;
 							height:100px; border-radius: 50%;">
 						</div>
@@ -53,13 +60,15 @@
 							 th:text=" ${cooperatives.cooperativeCACRegNumber}"> </h6>
 						</div>
 						</div>
-					</div>
-					<hr>
-					</th:block>
-					<center>
-				
+						</center>
+			</div>
+			<div class="col-md-1">
+				<h2><a th:href="@{/update(id=${cooperatives.id})}" class="btn btn-info">Update</a></h2>
+				<h2><a th:href="@{/delete(id=${cooperatives.id})}" class="btn btn-danger">Delete</a></h2>
+			</div>
+			
+			</th:block>						
+				</div>				
 				</div>
-				</div>	
-		</div>
 		</body>
 </html>
