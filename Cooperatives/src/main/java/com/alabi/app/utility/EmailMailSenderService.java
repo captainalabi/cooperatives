@@ -18,7 +18,7 @@ public class EmailMailSenderService {
 			throws AddressException, MessagingException {
 		
 		String username = "startcollabo@gmail.com";
-		String password = "wqdidopgopsqyduv";
+		String password = "replace";
 		
 		Properties prop = new Properties();
 		prop.put("mail.smtp.auth", true);
